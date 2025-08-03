@@ -13,7 +13,7 @@ trading-assistant/
 └── docker-compose.yml
 ```
 
-## 🚀 Quick Start
+<!-- ## 🚀 Quick Start
 
 ### Prerequisites
 
@@ -210,4 +210,4 @@ docker-compose up -d
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. -->
