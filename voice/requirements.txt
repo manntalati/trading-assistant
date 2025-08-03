@@ -1,0 +1,10 @@
+openai-whisper==20231117
+gtts==2.4.0
+elevenlabs==0.2.26
+pydub==0.25.1
+librosa==0.10.1
+soundfile==0.12.1
+numpy==1.25.2
+torch==2.1.1
+torchaudio==2.1.1
+transformers==4.36.2 

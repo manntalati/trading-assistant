@@ -1,0 +1,21 @@
+{
+  "ticker": "GOOGL",
+  "queryCount": 1,
+  "resultsCount": 1,
+  "adjusted": true,
+  "results": [
+    {
+      "v": 51329163.0,
+      "vw": 192.5824,
+      "o": 195.71,
+      "c": 191.9,
+      "h": 195.99,
+      "l": 191.09,
+      "t": 1753934400000,
+      "n": 688809
+    }
+  ],
+  "status": "OK",
+  "request_id": "e93b894365ad98cc644978e719520e2e",
+  "count": 1
+}

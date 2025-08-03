@@ -1,0 +1,21 @@
+{
+  "ticker": "MSFT",
+  "queryCount": 1,
+  "resultsCount": 1,
+  "adjusted": true,
+  "results": [
+    {
+      "v": 51617326.0,
+      "vw": 537.9712,
+      "o": 555.225,
+      "c": 533.5,
+      "h": 555.45,
+      "l": 531.9,
+      "t": 1753934400000,
+      "n": 870710
+    }
+  ],
+  "status": "OK",
+  "request_id": "ad0e8bb937c7f8dbeb573e6c6899d9bc",
+  "count": 1
+}

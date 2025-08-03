@@ -1,0 +1,3 @@
+.env
+backend/data_ingestion/__pycache__
+data/

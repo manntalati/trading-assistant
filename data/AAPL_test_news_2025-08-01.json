@@ -1,0 +1,632 @@
+{
+  "results": [
+    {
+      "id": "d17d192ce8055fc2d07246752c76a28bed859b5cbbe7d072640e79fd92e1e027",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.polygon.io/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.polygon.io/public/assets/news/favicons/investing.ico"
+      },
+      "title": "Apple\u2019s AI Gamble: Is It Smart Patience or Just Falling Behind?",
+      "author": "The Tokenist",
+      "published_utc": "2025-08-01T20:19:00Z",
+      "article_url": "https://www.investing.com/analysis/apples-ai-gamble-is-it-smart-patience-or-just-falling-behind-200664735",
+      "tickers": [
+        "AAPL",
+        "MSFT",
+        "GOOG",
+        "GOOGL",
+        "META",
+        "AMZN"
+      ],
+      "amp_url": "https://m.investing.com/analysis/apples-ai-gamble-is-it-smart-patience-or-just-falling-behind-200664735?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "Apple is taking a cautious approach to AI integration, delaying Apple Intelligence until 2026 while other tech giants rapidly deploy AI features. Despite slower progress, Apple maintains strong financial performance and sees AI as complementary rather than substitutive.",
+      "keywords": [
+        "AI",
+        "Apple Intelligence",
+        "Siri",
+        "tech innovation",
+        "AI integration"
+      ],
+      "insights": [
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Slow AI development but strong financial performance, strategic patience in AI deployment, outperformed earnings expectations"
+        },
+        {
+          "ticker": "MSFT",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Leading in AI ecosystem integration with comprehensive Copilot strategy across multiple platforms"
+        },
+        {
+          "ticker": "GOOG",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Aggressive AI investment ($85 billion projected capex) and core business AI integration"
+        },
+        {
+          "ticker": "GOOGL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Aggressive AI investment ($85 billion projected capex) and core business AI integration"
+        },
+        {
+          "ticker": "META",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Significant AI investment ($75 billion projected capex) and active AI integration"
+        },
+        {
+          "ticker": "AMZN",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Active in building AI into core business operations"
+        }
+      ]
+    },
+    {
+      "id": "cf1c4f0007abed29dc456335509805f8fdb7f826bbcf2c397f5caa7a10704730",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.polygon.io/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.polygon.io/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "Fed Stays Put On Rates, But Jobs Report Signals It May Regret It: This Week In Markets",
+      "author": "Piero Cingari",
+      "published_utc": "2025-08-01T20:10:19Z",
+      "article_url": "https://www.benzinga.com/markets/equities/25/08/46809585/fed-interest-rates-trump-powell-jobs-data-wall-street",
+      "tickers": [
+        "AAPL",
+        "META",
+        "MSFT"
+      ],
+      "image_url": "https://cdn.benzinga.com/files/images/story/2025/08/01/fed-ai8.png?width=1200&height=800&fit=crop",
+      "description": "The Federal Reserve maintained interest rates despite two board dissents, while July's jobs report revealed weak employment growth and significant downward revisions to previous months' job gains. Macroeconomic concerns and trade tensions are impacting market sentiment.",
+      "keywords": [
+        "Federal Reserve",
+        "interest rates",
+        "jobs report",
+        "inflation",
+        "trade tensions"
+      ],
+      "insights": [
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as a tech heavyweight with solid quarterly results, but experiencing stock price decline amid broader market macroeconomic concerns"
+        },
+        {
+          "ticker": "META",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Reported solid quarterly results but affected by overall market macroeconomic worries"
+        },
+        {
+          "ticker": "MSFT",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Reported solid quarterly results but impacted by broader market economic uncertainties"
+        }
+      ]
+    },
+    {
+      "id": "6db3d60502b6f224dfdc71ef41fa6d44d2c6417a84efa3a5b8c997f9bcd1a3f6",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.polygon.io/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.polygon.io/public/assets/news/favicons/investing.ico"
+      },
+      "title": "Nasdaq 100 Enters Harmonic Danger Zone\u2014Time and Price Are Squaring Out",
+      "author": "Patrick Montesdeoca",
+      "published_utc": "2025-08-01T19:13:00Z",
+      "article_url": "https://www.investing.com/analysis/nasdaq-100-enters-harmonic-danger-zonetime-and-price-are-squaring-out-200664731",
+      "tickers": [
+        "AAPL",
+        "AMZN",
+        "META",
+        "NVDA"
+      ],
+      "amp_url": "https://m.investing.com/analysis/nasdaq-100-enters-harmonic-danger-zonetime-and-price-are-squaring-out-200664731?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "Nasdaq 100 Futures are experiencing a technical decline, trading at 22,914.75, with potential for a short-term market reversal between August 2-5 based on Gann time cycles and harmonic projections.",
+      "keywords": [
+        "Nasdaq Futures",
+        "Gann cycles",
+        "technical analysis",
+        "market reversal",
+        "harmonic projection"
+      ],
+      "insights": [
+        {
+          "ticker": "AAPL",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Stock mentioned in market movers with a -2.49% decline, reflecting broader market downturn"
+        },
+        {
+          "ticker": "AMZN",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Stock mentioned with significant -8.05% drop, indicating substantial market pressure"
+        },
+        {
+          "ticker": "META",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Stock showing -2.96% decline, consistent with overall market weakness"
+        },
+        {
+          "ticker": "NVDA",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Stock experiencing -2.33% decline, reflecting tech sector volatility"
+        }
+      ]
+    },
+    {
+      "id": "557900c60947f19df8ac30a7971307911c2b9ee948fee5023f8e7107fdbaab60",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.polygon.io/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.polygon.io/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Why Shares of Apple Are Falling Today",
+      "author": "Bram Berkowitz",
+      "published_utc": "2025-08-01T16:35:37Z",
+      "article_url": "https://www.fool.com/investing/2025/08/01/why-shares-of-apple-are-falling-today/?source=iedfolrf0000001",
+      "tickers": [
+        "AAPL"
+      ],
+      "image_url": "https://g.foolcdn.com/editorial/images/827733/person-concerned-5.jpg",
+      "description": "Apple reported impressive Q3 financial results with $1.57 earnings per share and over $94 billion in revenue, exceeding analyst expectations. The company saw 10% year-over-year revenue growth, with iPhone sales surpassing $44.5 billion, though stock price dipped slightly after the announcement.",
+      "keywords": [
+        "earnings",
+        "revenue",
+        "iPhone",
+        "tariffs",
+        "Q3"
+      ],
+      "insights": [
+        {
+          "ticker": "AAPL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Strong quarterly performance with 10% revenue growth, exceeding analyst expectations, robust iPhone sales, and positive outlook from CEO Tim Cook"
+        }
+      ]
+    },
+    {
+      "id": "a6deed8c9e44e57fe7d90ed07cd6eb674e7ce7558800ae8359c9f6fba4d75808",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.polygon.io/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.polygon.io/public/assets/news/favicons/investing.ico"
+      },
+      "title": "Apple: AI-Focused Growth Strategy Positions Stock for Long-Term Outperformance",
+      "author": "Shane Neagle",
+      "published_utc": "2025-08-01T15:01:00Z",
+      "article_url": "https://www.investing.com/analysis/apple-aifocused-growth-strategy-positions-stock-for-longterm-outperformance-200664710",
+      "tickers": [
+        "AAPL",
+        "TSLA",
+        "META",
+        "MSFT",
+        "GOOG",
+        "GOOGL"
+      ],
+      "amp_url": "https://m.investing.com/analysis/apple-aifocused-growth-strategy-positions-stock-for-longterm-outperformance-200664710?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "Apple reported strong Q3 2025 earnings, beating analyst expectations and signaling a strategic pivot towards AI innovation through investments, acquisitions, and planned ecosystem features.",
+      "keywords": [
+        "AI",
+        "earnings",
+        "technology",
+        "innovation",
+        "investment"
+      ],
+      "insights": [
+        {
+          "ticker": "AAPL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Beat earnings expectations, reported $94.04 billion revenue, completed 7 AI-related acquisitions, committed to $500 billion U.S. investments, and outlined a clear AI development strategy"
+        },
+        {
+          "ticker": "TSLA",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Briefly mentioned as having 'stumbled', with no significant detailed performance analysis"
+        },
+        {
+          "ticker": "META",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as a competitor in AI approach, with no specific performance details"
+        },
+        {
+          "ticker": "MSFT",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Referenced as an AI competitor making 'sweeping moves', but no direct performance assessment"
+        },
+        {
+          "ticker": "GOOG",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as an AI competitor making 'sweeping moves', but no direct performance details"
+        },
+        {
+          "ticker": "GOOGL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as an AI competitor making 'sweeping moves', but no direct performance details"
+        }
+      ]
+    },
+    {
+      "id": "8306eb53d6ca9be711844cf2e0cd9af07d8d5dbb88eaa4623e21740d314b8acf",
+      "publisher": {
+        "name": "Benzinga",
+        "homepage_url": "https://www.benzinga.com/",
+        "logo_url": "https://s3.polygon.io/public/assets/news/logos/benzinga.svg",
+        "favicon_url": "https://s3.polygon.io/public/assets/news/favicons/benzinga.ico"
+      },
+      "title": "You Know FOMO. But This Fear Might Be Costing You More.",
+      "author": "Cosmo P Destefano",
+      "published_utc": "2025-08-01T14:55:53Z",
+      "article_url": "https://www.benzinga.com/news/global/25/08/46797454/you-know-fomo-but-this-fear-might-be-costing-you-more",
+      "tickers": [
+        "AAPL",
+        "AMZN",
+        "GOOG",
+        "GOOGL",
+        "NFLX"
+      ],
+      "image_url": "https://www.benzinga.com/next-assets/images/schema-image-default.png",
+      "description": "The article explores the concept of FOGI (Fear of Getting In), a psychological barrier that prevents investors from making timely investment decisions. It emphasizes the importance of having a systematic investment approach and overcoming emotional hesitation in financial markets.",
+      "keywords": [
+        "investing",
+        "psychology",
+        "market strategy",
+        "investment fear",
+        "financial decision-making"
+      ],
+      "insights": [
+        {
+          "ticker": "AAPL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "The author used Apple as a personal investment success story, highlighting how overcoming FOGI and investing in the company during the smartphone revolution led to significant returns"
+        },
+        {
+          "ticker": "AMZN",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Mentioned as an example of a solid, profitable tech company that emerged after the dot-com crash, demonstrating resilience"
+        },
+        {
+          "ticker": "GOOG",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Cited alongside Amazon as a successful tech company that survived the dot-com crash, representing technological innovation and market potential"
+        },
+        {
+          "ticker": "GOOGL",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Cited alongside Amazon as a successful tech company that survived the dot-com crash, representing technological innovation and market potential"
+        },
+        {
+          "ticker": "NFLX",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Mentioned as another successful tech company that emerged after the dot-com crash, symbolizing market recovery and potential"
+        }
+      ]
+    },
+    {
+      "id": "6b713d28791c88a39a1374cc4348f959329c789acce27437af6e5dc6d42444e0",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.polygon.io/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.polygon.io/public/assets/news/favicons/investing.ico"
+      },
+      "title": "August May Open the Door to Rising Volatility",
+      "author": "Adam Turnquist",
+      "published_utc": "2025-08-01T14:35:00Z",
+      "article_url": "https://www.investing.com/analysis/will-volatility-heat-up-in-august-200664706",
+      "tickers": [
+        "AAPL",
+        "AMZN",
+        "META",
+        "NVDA",
+        "TSLA"
+      ],
+      "amp_url": "https://m.investing.com/analysis/will-volatility-heat-up-in-august-200664706?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "The article discusses potential market volatility in August, noting historical trends showing the S&P 500 has been relatively flat, with potential for significant price movements. The CBOE Volatility Index tends to rise during this month, suggesting increased market uncertainty.",
+      "keywords": [
+        "volatility",
+        "S&P 500",
+        "market trends",
+        "August trading"
+      ],
+      "insights": [
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in market movers list with a minor stock price decline, no specific negative or positive commentary in the main article"
+        },
+        {
+          "ticker": "AMZN",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Listed with significant stock price decline of -7.48% in market movers section"
+        },
+        {
+          "ticker": "META",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in market movers with a modest stock price decline, no specific negative or positive commentary"
+        },
+        {
+          "ticker": "NVDA",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in market movers with a minor stock price decline, no specific negative or positive commentary"
+        },
+        {
+          "ticker": "TSLA",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in market movers with a minimal stock price decline, no specific negative or positive commentary"
+        }
+      ]
+    },
+    {
+      "id": "56d339e7e6cfb6305584370803d7efe5b5859937574906daa300b5bc5e0bd8a2",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.polygon.io/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.polygon.io/public/assets/news/favicons/investing.ico"
+      },
+      "title": "Apple Stock: Big Earnings, Small Move\u2014Time to Buy?",
+      "author": "Chris Markoch",
+      "published_utc": "2025-08-01T14:27:00Z",
+      "article_url": "https://www.investing.com/analysis/apple-stock-big-earnings-small-movetime-to-buy-200664721",
+      "tickers": [
+        "AAPL",
+        "MSFT",
+        "META",
+        "AMZN"
+      ],
+      "amp_url": "https://m.investing.com/analysis/apple-stock-big-earnings-small-movetime-to-buy-200664721?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "Apple reported strong Q3 earnings with $94 billion revenue, beating expectations and showing 10% year-over-year growth. Despite positive results, stock movement was minimal, with analysts questioning the sustainability of performance and potential impact of tariffs.",
+      "keywords": [
+        "Apple",
+        "earnings",
+        "iPhone",
+        "tariffs",
+        "AI",
+        "stock performance"
+      ],
+      "insights": [
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Strong quarterly results with 10% revenue growth, but concerns about repeatability of performance and uncertainty around tariffs and AI strategy"
+        },
+        {
+          "ticker": "MSFT",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in comparison to Apple's earnings performance, but no specific details provided"
+        },
+        {
+          "ticker": "META",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in comparison to Apple's earnings performance, but no specific details provided"
+        },
+        {
+          "ticker": "AMZN",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Briefly mentioned in context of sales events, no direct performance analysis"
+        }
+      ]
+    },
+    {
+      "id": "40ff7f53d3a193aa4d99e57a8f682e739f513a2495a497dba0c2f54a24769eb8",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.polygon.io/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.polygon.io/public/assets/news/favicons/investing.ico"
+      },
+      "title": "S&P 500: Is This a Major Reversal?",
+      "author": "Paul Rejczak",
+      "published_utc": "2025-08-01T14:03:00Z",
+      "article_url": "https://www.investing.com/analysis/sp-500-is-this-a-major-reversal-200664719",
+      "tickers": [
+        "CVX",
+        "AAPL",
+        "AMZN"
+      ],
+      "amp_url": "https://m.investing.com/analysis/sp-500-is-this-a-major-reversal-200664719?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "The S&P 500 experienced a pullback after reaching a new all-time high, with lower-than-expected jobs data and potential market consolidation. Investors are advised to be cautious and consider defensive positioning.",
+      "keywords": [
+        "S&P 500",
+        "market reversal",
+        "jobs data",
+        "tariffs",
+        "volatility"
+      ],
+      "insights": [
+        {
+          "ticker": "CVX",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Reported Q2 profit above analyst expectations with record oil and gas production, despite an 11% drop in crude prices"
+        },
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned in market movers section with slight pre-market decline, investors weighing estimated tariff costs and iPhone sales"
+        },
+        {
+          "ticker": "AMZN",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Significant stock price decline of 7.65% in market movers section"
+        }
+      ]
+    },
+    {
+      "id": "972bfd000ed721cd1819e7f107605fd36fe3002e3cd4b15864ea43ac4f7b019b",
+      "publisher": {
+        "name": "The Motley Fool",
+        "homepage_url": "https://www.fool.com/",
+        "logo_url": "https://s3.polygon.io/public/assets/news/logos/themotleyfool.svg",
+        "favicon_url": "https://s3.polygon.io/public/assets/news/favicons/themotleyfool.ico"
+      },
+      "title": "Meta and Microsoft Just Shared Great News for Artificial Intelligence (AI) Stocks",
+      "author": "Neil Rozenbaum",
+      "published_utc": "2025-08-01T09:30:00Z",
+      "article_url": "https://www.fool.com/investing/2025/08/01/meta-and-microsoft-just-shared-great-news-for-arti/?source=iedfolrf0000001",
+      "tickers": [
+        "META",
+        "MSFT",
+        "AAPL",
+        "NVDA"
+      ],
+      "image_url": "https://g.foolcdn.com/editorial/images/827603/meta.jpg",
+      "description": "The article discusses recent earnings reports from Meta Platforms and Microsoft, highlighting their performance in the context of AI stocks and potential future growth.",
+      "keywords": [
+        "AI",
+        "earnings",
+        "technology stocks",
+        "investment"
+      ],
+      "insights": [
+        {
+          "ticker": "META",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Mentioned in the context of potential AI stock growth and recommended by the analyst"
+        },
+        {
+          "ticker": "MSFT",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Discussed as having a bullish earnings report and recommended by the analyst"
+        },
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned as a comparative benchmark for potential AI stock growth"
+        },
+        {
+          "ticker": "NVDA",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Mentioned indirectly as not being the predicted top AI stock by 2030"
+        }
+      ]
+    },
+    {
+      "id": "3dea61d25736f04aae398d7fd9c24515146d21aba5f242d58b0cf6447da43534",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.polygon.io/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.polygon.io/public/assets/news/favicons/investing.ico"
+      },
+      "title": "These 3 Funds Squeeze Apple and Microsoft for Dividends up to 11%",
+      "author": "Brett Owens",
+      "published_utc": "2025-08-01T09:19:00Z",
+      "article_url": "https://www.investing.com/analysis/these-3-funds-squeeze-apple-and-microsoft-for-dividends-up-to-11-200664697",
+      "tickers": [
+        "AAPL",
+        "MSFT",
+        "AMZN",
+        "QYLD",
+        "JEPQ"
+      ],
+      "amp_url": "https://m.investing.com/analysis/these-3-funds-squeeze-apple-and-microsoft-for-dividends-up-to-11-200664697?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "The article discusses three dividend-focused investment funds that leverage tech stocks' current trend of AI-driven cost reduction, offering high dividend yields by using covered call strategies on Nasdaq tech companies.",
+      "keywords": [
+        "tech stocks",
+        "AI",
+        "dividend funds",
+        "covered calls",
+        "Nasdaq"
+      ],
+      "insights": [
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Part of tech sector experiencing AI-driven workforce reduction, but still considered a core holding in investment funds"
+        },
+        {
+          "ticker": "MSFT",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Implementing AI-driven layoffs, viewed as strategically reducing costs while maintaining market strength"
+        },
+        {
+          "ticker": "AMZN",
+          "sentiment": "positive",
+          "sentiment_reasoning": "CEO acknowledges AI's potential to improve profit margins through workforce optimization"
+        },
+        {
+          "ticker": "QYLD",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Offers 11.2% dividend yield by selling covered calls on Nasdaq-100 index stocks"
+        },
+        {
+          "ticker": "JEPQ",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Provides 10.8% dividend yield with more flexible management strategy compared to similar funds"
+        }
+      ]
+    },
+    {
+      "id": "b4809f18aab9bad093f0bb3184ab8a017d6488e1b22e006adc20400fdddb65e0",
+      "publisher": {
+        "name": "Investing.com",
+        "homepage_url": "https://www.investing.com/",
+        "logo_url": "https://s3.polygon.io/public/assets/news/logos/investing.png",
+        "favicon_url": "https://s3.polygon.io/public/assets/news/favicons/investing.ico"
+      },
+      "title": "S&P 500: Eyes Now on Jobs Report After Hot PCE Stalls Momentum",
+      "author": "Michael Kramer",
+      "published_utc": "2025-08-01T07:10:00Z",
+      "article_url": "https://www.investing.com/analysis/sp-500-eyes-now-on-jobs-report-after-hot-pce-stalls-momentum-200664678",
+      "tickers": [
+        "META",
+        "MSFT",
+        "AAPL",
+        "AMZN",
+        "RSP"
+      ],
+      "amp_url": "https://m.investing.com/analysis/sp-500-eyes-now-on-jobs-report-after-hot-pce-stalls-momentum-200664678?ampMode=1",
+      "image_url": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+      "description": "The S&P 500 experienced a downturn after a hotter-than-expected PCE report, with market attention now focused on the upcoming jobs report. The market saw mixed performance from major tech stocks, with volatility indicators suggesting potential market shifts.",
+      "keywords": [
+        "S&P 500",
+        "PCE report",
+        "jobs report",
+        "market volatility",
+        "dollar index"
+      ],
+      "insights": [
+        {
+          "ticker": "META",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Stock jumped over 11% during trading"
+        },
+        {
+          "ticker": "MSFT",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Stock gained around 4% during trading"
+        },
+        {
+          "ticker": "AAPL",
+          "sentiment": "neutral",
+          "sentiment_reasoning": "Stock declined slightly by 0.71%"
+        },
+        {
+          "ticker": "AMZN",
+          "sentiment": "positive",
+          "sentiment_reasoning": "Stock increased by 1.70%"
+        },
+        {
+          "ticker": "RSP",
+          "sentiment": "negative",
+          "sentiment_reasoning": "Lost approximately 90 basis points during trading"
+        }
+      ]
+    }
+  ],
+  "status": "OK",
+  "request_id": "d088f24cac5dfa60331a7a1d87f36caf",
+  "count": 12
+}
