@@ -11,7 +11,7 @@ load_dotenv()
 
 class PolygonDataIngestion:
     def __init__(self):
-        self.api_key = "Kn1GNp6uDK644ptyAlI5KNaLmeOjESap"
+        self.api_key = os.getenv("POLYGON_API_KEY")
         self.base_url = "https://api.polygon.io"
         self.session = requests.Session()
         self.session.headers.update({
@@ -31,32 +31,7 @@ class PolygonDataIngestion:
         url = f"{self.base_url}/v3/reference/tickers/{ticker}"
         response = self.session.get(url)
         response.raise_for_status()
-        return response.json()
-    
-    def get_news_articles(self, ticker: str, date: str) -> Optional[Dict]:
-        """Get news articles for a ticker on a specific date"""
-        url = f"{self.base_url}/v2/reference/news"
-        params = {
-            "ticker": ticker,
-            "published_utc.gte": f"{date}T00:00:00Z",
-            "published_utc.lte": f"{date}T23:59:59Z",
-            "limit": 50
-        }
-        response = self.session.get(url, params=params)
-        response.raise_for_status()
-        return response.json()
-    
-    # def get_earnings_calendar(self, date: str) -> Optional[Dict]:
-    #     """Get earnings calendar for a specific date"""
-    #     url = f"{self.base_url}/v3/reference/earnings"
-    #     params = {
-    #         "date": date,
-    #         "limit": 100
-    #     }
-    #     response = self.session.get(url, params=params)
-    #     response.raise_for_status()
-    #     return response.json()
-        
+        return response.json() 
     
     def save_to_file(self, data: Dict, filename: str, directory: str = "data"):
         """Save data to a JSON file"""
@@ -72,18 +47,10 @@ class PolygonDataIngestion:
         if date is None:
             date = datetime.now().strftime("%Y-%m-%d")
         
-        # Validate date is not in the future
-        try:
-            request_date = datetime.strptime(date, "%Y-%m-%d")
-            today = datetime.now() - timedelta(days=1)
-            if request_date > today:
-                print(f"⚠️  Warning: Requested date {date} is in the future. Using yesterday's date instead.")
-                date = (today - timedelta(days=1)).strftime("%Y-%m-%d")
-        except ValueError:
-            print(f"⚠️  Invalid date format: {date}. Using today's date.")
-            date = datetime.now().strftime("%Y-%m-%d")
-        
-        print(f"Starting daily workflow for {date}")
+        request_date = datetime.strptime(date, "%Y-%m-%d")
+        today = datetime.now()
+        if request_date > today:
+            date = (today - timedelta(days=1)).strftime("%Y-%m-%d")
         
         for ticker in tickers:
             print(f"Fetching daily bars for {ticker}...")
@@ -94,27 +61,11 @@ class PolygonDataIngestion:
             time.sleep(0.1)
         
         for ticker in tickers:
-            print(f"Fetching ticker details for {ticker}...")
             details_data = self.get_ticker_details(ticker)
             if details_data:
                 self.save_to_file(details_data, f"{ticker}_details.json")
             
             time.sleep(0.1)
-        
-        for ticker in tickers:
-            print(f"Fetching news for {ticker}...")
-            news_data = self.get_news_articles(ticker, date)
-            if news_data:
-                self.save_to_file(news_data, f"{ticker}_news_{date}.json")
-            
-            time.sleep(0.1)
-        
-        print(f"Fetching earnings calendar for {date}...")
-        earnings_data = self.get_earnings_calendar(date)
-        if earnings_data:
-            self.save_to_file(earnings_data, f"earnings_calendar_{date}.json")
-        
-        print("Daily workflow completed!")
 
 if __name__ == "__main__":
     polygon_data = PolygonDataIngestion()

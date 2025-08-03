@@ -1,3 +1,7 @@
 .env
 backend/data_ingestion/__pycache__
 data/
+virtualenv/
+data/
+backend/__pycache__
+backend/tasks/__pycache__

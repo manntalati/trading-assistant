@@ -1,4 +1,5 @@
 import os
+from celery.schedules import crontab
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -25,8 +26,12 @@ worker_max_tasks_per_child = 1000
 beat_schedule = {
     'daily-data-ingestion': {
         'task': 'tasks.daily_data_task.daily_data_ingestion_task',
-        'schedule': 3600.0,  # Run every hour for testing
-        # 'schedule': crontab(hour=18, minute=0),  # Run at 6 PM EST daily
+        'schedule': crontab(hour=18, minute=0, day_of_week='1-5'),
+        'args': (),
+    },
+    'daily-summary': {
+        'task': 'tasks.daily_data_task.send_daily_summary',
+        'schedule': crontab(hour=19, minute=0, day_of_week='1-5'),
         'args': (),
     },
 }
