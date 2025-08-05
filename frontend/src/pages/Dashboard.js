@@ -8,7 +8,8 @@ import {
   AlertTriangle,
   CheckCircle,
   Clock,
-  Brain
+  Database,
+  Mail
 } from 'lucide-react';
 import PriceChart from '../components/PriceChart';
 import SignalCard from '../components/SignalCard';
@@ -17,44 +18,48 @@ import MarketOverview from '../components/MarketOverview';
 const Dashboard = () => {
   const { state } = useTrading();
 
-  // Calculate summary stats
+  // Calculate summary stats based on actual backend capabilities
   const totalTickers = state.watchlist.length;
-  const activeSignals = state.signals.filter(s => s.status === 'active').length;
-  const bullishSignals = state.signals.filter(s => s.sentiment === 'bullish').length;
-  const bearishSignals = state.signals.filter(s => s.sentiment === 'bearish').length;
+  const dataIngestionStatus = state.taskStatus.dailyDataIngestion;
+  const lastExecution = state.taskStatus.lastExecution ? new Date(state.taskStatus.lastExecution).toLocaleDateString() : 'Never';
+  const nextScheduled = state.taskStatus.nextScheduled ? new Date(state.taskStatus.nextScheduled).toLocaleDateString() : 'Not Set';
 
   const summaryCards = [
     {
       title: 'Watchlist',
       value: totalTickers,
-      change: '+2',
-      changeType: 'positive',
+      change: 'Fixed',
+      changeType: 'neutral',
       icon: TrendingUp,
-      color: 'text-bullish'
+      color: 'text-bullish',
+      description: 'Polygon.io tickers'
     },
     {
-      title: 'Active Signals',
-      value: activeSignals,
-      change: '+3',
+      title: 'Data Ingestion',
+      value: dataIngestionStatus,
+      change: 'Weekdays 6PM',
       changeType: 'positive',
       icon: Activity,
-      color: 'text-bullish'
+      color: 'text-blue-500',
+      description: 'Daily OHLCV data'
     },
     {
-      title: 'Bullish Signals',
-      value: bullishSignals,
-      change: '+5',
+      title: 'Last Execution',
+      value: lastExecution,
+      change: 'Email notifications',
       changeType: 'positive',
-      icon: TrendingUp,
-      color: 'text-bullish'
+      icon: Clock,
+      color: 'text-green-500',
+      description: 'Task completion'
     },
     {
-      title: 'Bearish Signals',
-      value: bearishSignals,
-      change: '-2',
-      changeType: 'negative',
+      title: 'Next Scheduled',
+      value: nextScheduled,
+      change: '7PM Summary',
+      changeType: 'neutral',
       icon: TrendingDown,
-      color: 'text-bearish'
+      color: 'text-gray-400',
+      description: 'Daily summary email'
     }
   ];
 
@@ -112,27 +117,39 @@ const Dashboard = () => {
               <h2 className="text-xl font-semibold text-white">Market Overview</h2>
               <div className="flex items-center space-x-2">
                 <span className="text-sm text-gray-400">Auto-refresh</span>
-                <div className="w-2 h-2 bg-bullish rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               </div>
             </div>
             <MarketOverview />
           </div>
         </div>
 
-        {/* Recent Signals */}
+        {/* Task Status */}
         <div className="space-y-6">
           <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
-            <h2 className="text-xl font-semibold text-white mb-4">Recent Signals</h2>
+            <h2 className="text-xl font-semibold text-white mb-4">Task Status</h2>
             <div className="space-y-3">
-              {state.signals.slice(0, 5).map((signal, index) => (
-                <SignalCard key={index} signal={signal} />
-              ))}
-              {state.signals.length === 0 && (
-                <div className="text-center py-8">
-                  <AlertTriangle className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-400">No signals yet</p>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400">Daily Data Ingestion</span>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-bullish" />
+                  <span className="text-sm text-bullish">{state.taskStatus.dailyDataIngestion}</span>
                 </div>
-              )}
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400">Email Notifications</span>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-bullish" />
+                  <span className="text-sm text-bullish">Active</span>
+                </div>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400">Schedule</span>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-bullish" />
+                  <span className="text-sm text-bullish">Weekdays 6PM</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -144,21 +161,14 @@ const Dashboard = () => {
                 <span className="text-sm text-gray-400">Data Ingestion</span>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-4 h-4 text-bullish" />
-                  <span className="text-sm text-bullish">Active</span>
+                  <span className="text-sm text-bullish">{state.systemStatus.dataIngestion}</span>
                 </div>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-400">AI Agent</span>
+                <span className="text-sm text-gray-400">Email Notifications</span>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-4 h-4 text-bullish" />
-                  <span className="text-sm text-bullish">Online</span>
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-400">Voice Service</span>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-bullish" />
-                  <span className="text-sm text-bullish">Ready</span>
+                  <span className="text-sm text-bullish">{state.systemStatus.emailNotifications}</span>
                 </div>
               </div>
               <div className="flex items-center justify-between">
@@ -175,44 +185,69 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* AI Insights */}
+      {/* Data Overview */}
       <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
-        <h2 className="text-xl font-semibold text-white mb-4">AI Insights</h2>
+        <h2 className="text-xl font-semibold text-white mb-4">Data Overview</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {state.aiInsights.slice(0, 6).map((insight, index) => (
-            <div
-              key={index}
-              className="border border-gray-700 rounded-lg p-4 hover:border-green-500 transition-all duration-200"
-            >
-              <div className="flex items-start space-x-3">
-                <Brain className="w-5 h-5 text-bullish mt-1" />
-                <div className="flex-1">
-                  <p className="text-sm text-white font-medium">{insight.title}</p>
-                  <p className="text-xs text-gray-400 mt-1">
-                    {insight.description}
-                  </p>
-                  <div className="flex items-center space-x-2 mt-2">
-                    <span className={`text-xs px-2 py-1 rounded ${
-                      insight.sentiment === 'bullish' ? 'bg-bullish/20 text-bullish' :
-                      insight.sentiment === 'bearish' ? 'bg-bearish/20 text-bearish' :
-                      'bg-neutral/20 text-neutral'
-                    }`}>
-                      {insight.sentiment}
-                    </span>
-                    <span className="text-xs text-gray-400">
-                      {new Date(insight.timestamp).toLocaleTimeString()}
-                    </span>
-                  </div>
+          <div className="border border-gray-700 rounded-lg p-4">
+            <div className="flex items-start space-x-3">
+              <Database className="w-5 h-5 text-blue-500 mt-1" />
+              <div className="flex-1">
+                <p className="text-sm text-white font-medium">Polygon.io Integration</p>
+                <p className="text-xs text-gray-400 mt-1">
+                  Daily OHLCV data ingestion for 14 tickers
+                </p>
+                <div className="flex items-center space-x-2 mt-2">
+                  <span className="text-xs px-2 py-1 rounded bg-blue-500/20 text-blue-500">
+                    REST API
+                  </span>
+                  <span className="text-xs text-gray-400">
+                    Weekdays 6PM EST
+                  </span>
                 </div>
               </div>
             </div>
-          ))}
-          {state.aiInsights.length === 0 && (
-            <div className="col-span-full text-center py-8">
-              <Brain className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-              <p className="text-gray-400">No AI insights yet</p>
+          </div>
+          
+          <div className="border border-gray-700 rounded-lg p-4">
+            <div className="flex items-start space-x-3">
+              <Mail className="w-5 h-5 text-green-500 mt-1" />
+              <div className="flex-1">
+                <p className="text-sm text-white font-medium">Email Notifications</p>
+                <p className="text-xs text-gray-400 mt-1">
+                  Task lifecycle and daily summary emails
+                </p>
+                <div className="flex items-center space-x-2 mt-2">
+                  <span className="text-xs px-2 py-1 rounded bg-green-500/20 text-green-500">
+                    Active
+                  </span>
+                  <span className="text-xs text-gray-400">
+                    7PM Summary
+                  </span>
+                </div>
+              </div>
             </div>
-          )}
+          </div>
+          
+          <div className="border border-gray-700 rounded-lg p-4">
+            <div className="flex items-start space-x-3">
+              <Clock className="w-5 h-5 text-gray-400 mt-1" />
+              <div className="flex-1">
+                <p className="text-sm text-white font-medium">Scheduled Tasks</p>
+                <p className="text-xs text-gray-400 mt-1">
+                  Celery-based automation with Redis
+                </p>
+                <div className="flex items-center space-x-2 mt-2">
+                  <span className="text-xs px-2 py-1 rounded bg-gray-500/20 text-gray-400">
+                    Automated
+                  </span>
+                  <span className="text-xs text-gray-400">
+                    Market hours only
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

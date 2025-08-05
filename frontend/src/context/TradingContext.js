@@ -4,20 +4,26 @@ import axios from 'axios';
 const TradingContext = createContext();
 
 const initialState = {
-  // Market data
+  // Market data - matches actual backend watchlist
   watchlist: ['DE', 'APPL', 'AMD', 'DELL', 'FIG', 'UBER', 'MRVL', 'CSCO', 'VICI', 'PUBM', 'AVD', 'PDSB', 'QQQ', 'VOO'],
   marketData: {},
   latestPrices: {},
+  stockDetails: {},
+  selectedStock: null,
+  chartData: {},
+  chartPeriod: '1m',
   
-  // Trading signals
-  signals: [],
-  aiInsights: [],
+  // Task status - reflects actual backend capabilities
+  taskStatus: {
+    dailyDataIngestion: 'idle',
+    lastExecution: null,
+    nextScheduled: null
+  },
   
-  // System status
+  // System status - accurate to current backend
   systemStatus: {
     dataIngestion: 'idle',
-    aiAgent: 'idle',
-    voiceService: 'idle',
+    emailNotifications: 'idle',
     lastUpdate: null
   },
   
@@ -28,7 +34,7 @@ const initialState = {
     theme: 'dark'
   },
   
-  // Voice assistant
+  // Voice assistant - placeholder for future implementation
   voiceTranscript: '',
   voiceResponse: '',
   isListening: false
@@ -48,16 +54,34 @@ function tradingReducer(state, action) {
         latestPrices: { ...state.latestPrices, ...action.payload }
       };
       
-    case 'ADD_SIGNAL':
+    case 'UPDATE_TASK_STATUS':
       return {
         ...state,
-        signals: [action.payload, ...state.signals.slice(0, 49)] // Keep last 50
+        taskStatus: { ...state.taskStatus, ...action.payload }
       };
       
-    case 'ADD_AI_INSIGHT':
+    case 'SET_SELECTED_STOCK':
       return {
         ...state,
-        aiInsights: [action.payload, ...state.aiInsights.slice(0, 19)] // Keep last 20
+        selectedStock: action.payload
+      };
+      
+    case 'SET_CHART_DATA':
+      return {
+        ...state,
+        chartData: { ...state.chartData, ...action.payload }
+      };
+      
+    case 'SET_CHART_PERIOD':
+      return {
+        ...state,
+        chartPeriod: action.payload
+      };
+      
+    case 'SET_STOCK_DETAILS':
+      return {
+        ...state,
+        stockDetails: { ...state.stockDetails, ...action.payload }
       };
       
     case 'UPDATE_SYSTEM_STATUS':
@@ -106,9 +130,28 @@ export function TradingProvider({ children }) {
   useEffect(() => {
     const fetchMarketData = async () => {
       try {
-        // Fetch from your backend API
-        const response = await axios.get('/api/market-data');
-        dispatch({ type: 'SET_MARKET_DATA', payload: response.data });
+        const response = await axios.get('http://localhost:8000/api/watchlist');
+        const stocks = response.data.stocks;
+        
+        const marketData = {};
+        const latestPrices = {};
+        
+        stocks.forEach(stock => {
+          marketData[stock.ticker] = {
+            price: stock.close,
+            change: stock.change,
+            changePercent: stock.change_percent,
+            open: stock.open,
+            high: stock.high,
+            low: stock.low,
+            volume: stock.volume,
+            date: stock.date
+          };
+          latestPrices[stock.ticker] = stock.close;
+        });
+        
+        dispatch({ type: 'SET_MARKET_DATA', payload: marketData });
+        dispatch({ type: 'SET_LATEST_PRICES', payload: latestPrices });
       } catch (error) {
         console.error('Failed to fetch market data:', error);
       }
@@ -140,33 +183,37 @@ export function TradingProvider({ children }) {
     return () => clearInterval(interval);
   }, []);
 
-  // Mock data for development
-  useEffect(() => {
-    // Simulate real-time price updates
-    const mockPriceUpdates = setInterval(() => {
-      const mockPrices = {};
-      state.watchlist.forEach(ticker => {
-        const currentPrice = 100 + Math.random() * 200;
-        const change = (Math.random() - 0.5) * 10;
-        mockPrices[ticker] = {
-          price: currentPrice.toFixed(2),
-          change: change.toFixed(2),
-          changePercent: ((change / currentPrice) * 100).toFixed(2),
-          volume: Math.floor(Math.random() * 1000000)
-        };
+  // Fetch stock details and chart data
+  const fetchStockDetails = async (ticker) => {
+    try {
+      const [detailsResponse, chartResponse] = await Promise.all([
+        axios.get(`http://localhost:8000/api/stock/${ticker}`),
+        axios.get(`http://localhost:8000/api/stock/${ticker}/chart?period=${state.chartPeriod}`)
+      ]);
+      
+      dispatch({ 
+        type: 'SET_STOCK_DETAILS', 
+        payload: { [ticker]: detailsResponse.data } 
       });
-      dispatch({ type: 'SET_LATEST_PRICES', payload: mockPrices });
-    }, 5000);
-
-    return () => clearInterval(mockPriceUpdates);
-  }, [state.watchlist]);
+      
+      dispatch({ 
+        type: 'SET_CHART_DATA', 
+        payload: { [ticker]: chartResponse.data } 
+      });
+    } catch (error) {
+      console.error('Failed to fetch stock details:', error);
+    }
+  };
 
   const value = {
     state,
     dispatch,
     actions: {
-      addSignal: (signal) => dispatch({ type: 'ADD_SIGNAL', payload: signal }),
-      addInsight: (insight) => dispatch({ type: 'ADD_AI_INSIGHT', payload: insight }),
+      setMarketData: (data) => dispatch({ type: 'SET_MARKET_DATA', payload: data }),
+      setLatestPrices: (prices) => dispatch({ type: 'SET_LATEST_PRICES', payload: prices }),
+      setSelectedStock: (stock) => dispatch({ type: 'SET_SELECTED_STOCK', payload: stock }),
+      setChartPeriod: (period) => dispatch({ type: 'SET_CHART_PERIOD', payload: period }),
+      fetchStockDetails: fetchStockDetails,
       setVoiceTranscript: (transcript) => dispatch({ type: 'SET_VOICE_TRANSCRIPT', payload: transcript }),
       setVoiceResponse: (response) => dispatch({ type: 'SET_VOICE_RESPONSE', payload: response }),
       setListening: (isListening) => dispatch({ type: 'SET_LISTENING', payload: isListening }),

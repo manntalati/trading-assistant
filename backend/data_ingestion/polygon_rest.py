@@ -45,7 +45,7 @@ class PolygonDataIngestion:
     def daily_workflow(self, tickers: List[str], date: str = None):
         """Run daily data ingestion workflow"""
         if date is None:
-            date = datetime.now().strftime("%Y-%m-%d")
+            date = (datetime.now().date() - timedelta(days=3)).strftime("%Y-%m-%d")
         
         request_date = datetime.strptime(date, "%Y-%m-%d")
         today = datetime.now()
@@ -53,19 +53,18 @@ class PolygonDataIngestion:
             date = (today - timedelta(days=1)).strftime("%Y-%m-%d")
         
         for ticker in tickers:
-            print(f"Fetching daily bars for {ticker}...")
             bars_data = self.get_daily_bars(ticker, date)
             if bars_data:
                 self.save_to_file(bars_data, f"{ticker}_daily_bars_{date}.json")
             
-            time.sleep(0.1)
+            time.sleep(30)
         
         for ticker in tickers:
             details_data = self.get_ticker_details(ticker)
             if details_data:
                 self.save_to_file(details_data, f"{ticker}_details.json")
             
-            time.sleep(0.1)
+            time.sleep(30)
 
 if __name__ == "__main__":
     polygon_data = PolygonDataIngestion()

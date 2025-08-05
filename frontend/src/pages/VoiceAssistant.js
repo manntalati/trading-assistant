@@ -46,59 +46,40 @@ const VoiceAssistant = () => {
         <div>
           <h1 className="text-3xl font-bold text-white">Voice Assistant</h1>
           <p className="text-gray-400">
-            AI-powered voice commands and analysis
+            Future AI-powered voice commands and analysis
           </p>
         </div>
         <div className="flex items-center space-x-2">
-          <div className={`w-3 h-3 rounded-full ${isListening ? 'bg-bullish animate-pulse' : 'bg-dashboard-text-secondary'}`}></div>
+          <div className="w-3 h-3 rounded-full bg-gray-400"></div>
           <span className="text-sm text-gray-400">
-            {isListening ? 'Listening...' : 'Ready'}
+            Coming Soon
           </span>
         </div>
       </div>
 
-      {/* Voice Interface */}
+      {/* Coming Soon Interface */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Voice Input */}
         <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-white mb-4">Voice Input</h2>
+          <h2 className="text-xl font-semibold text-white mb-4">Voice Interface</h2>
           
-          {/* Voice Button */}
-          <div className="flex justify-center mb-6">
-            <button
-              onClick={handleVoiceToggle}
-              className={`w-20 h-20 rounded-full flex items-center justify-center transition-all duration-200 ${
-                isListening 
-                  ? 'bg-bearish hover:bg-bearish/80' 
-                  : 'bg-bullish hover:bg-bullish/80'
-              }`}
-            >
-              {isListening ? (
-                <MicOff className="w-8 h-8 text-white" />
-              ) : (
-                <Mic className="w-8 h-8 text-white" />
-              )}
-            </button>
-          </div>
-
-          {/* Text Input */}
-          <div className="space-y-4">
-            <div className="flex space-x-2">
-              <input
-                type="text"
-                value={inputText}
-                onChange={(e) => setInputText(e.target.value)}
-                placeholder="Type your question or use voice..."
-                className="flex-1 bg-dashboard-border border border-gray-700 rounded-lg px-4 py-2 text-white placeholder-dashboard-text-secondary focus:outline-none focus:border-dashboard-accent"
-                onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-              />
-              <button
-                onClick={handleSendMessage}
-                className="bg-bullish hover:bg-bullish/80 text-white px-4 py-2 rounded-lg transition-colors"
-              >
-                <Send className="w-4 h-4" />
-              </button>
+          {/* Coming Soon Message */}
+          <div className="text-center py-12">
+            <Mic className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-lg font-semibold text-white mb-2">Coming Soon</h3>
+            <p className="text-gray-400 mb-4">
+              Voice interface will be available once Whisper and TTS integration is implemented.
+            </p>
+            <div className="bg-gray-800 border border-gray-600 rounded-lg p-4 max-w-md mx-auto">
+              <h4 className="text-sm font-medium text-white mb-2">Planned Features:</h4>
+              <ul className="text-xs text-gray-400 space-y-1">
+                <li>• OpenAI Whisper for speech-to-text</li>
+                <li>• gTTS/ElevenLabs for text-to-speech</li>
+                <li>• Natural language commands</li>
+                <li>• Voice-activated trading queries</li>
+              </ul>
             </div>
+          </div>
 
             {/* Voice Commands */}
             <div>
@@ -151,7 +132,7 @@ const VoiceAssistant = () => {
             </div>
           )}
         </div>
-      </div>
+      
 
       {/* Chat History */}
       <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">

@@ -13,12 +13,12 @@ const TradingSignals = () => {
         <div>
           <h1 className="text-3xl font-bold text-white">Trading Signals</h1>
           <p className="text-gray-400">
-            AI-generated trading insights and recommendations
+            Future AI-generated trading insights and recommendations
           </p>
         </div>
         <div className="flex items-center space-x-2">
-          <Bell className="w-5 h-5 text-bullish" />
-          <span className="text-sm text-bullish">Live Signals</span>
+          <Bell className="w-5 h-5 text-gray-400" />
+          <span className="text-sm text-gray-400">Coming Soon</span>
         </div>
       </div>
 
@@ -26,74 +26,63 @@ const TradingSignals = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
           <div className="flex items-center space-x-3">
-            <TrendingUp className="w-8 h-8 text-bullish" />
+            <TrendingUp className="w-8 h-8 text-gray-400" />
             <div>
               <p className="text-sm text-gray-400">Bullish Signals</p>
-              <p className="text-2xl font-bold text-white">12</p>
+              <p className="text-2xl font-bold text-white">0</p>
             </div>
           </div>
         </div>
 
         <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
           <div className="flex items-center space-x-3">
-            <TrendingDown className="w-8 h-8 text-bearish" />
+            <TrendingDown className="w-8 h-8 text-gray-400" />
             <div>
               <p className="text-sm text-gray-400">Bearish Signals</p>
-              <p className="text-2xl font-bold text-white">5</p>
+              <p className="text-2xl font-bold text-white">0</p>
             </div>
           </div>
         </div>
 
         <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
           <div className="flex items-center space-x-3">
-            <Brain className="w-8 h-8 text-bullish" />
+            <Brain className="w-8 h-8 text-gray-400" />
             <div>
               <p className="text-sm text-gray-400">AI Insights</p>
-              <p className="text-2xl font-bold text-white">8</p>
+              <p className="text-2xl font-bold text-white">0</p>
             </div>
           </div>
         </div>
 
         <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
           <div className="flex items-center space-x-3">
-            <Bell className="w-8 h-8 text-bullish" />
+            <Bell className="w-8 h-8 text-gray-400" />
             <div>
               <p className="text-sm text-gray-400">Active Signals</p>
-              <p className="text-2xl font-bold text-white">3</p>
+              <p className="text-2xl font-bold text-white">0</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Active Signals */}
+      {/* Coming Soon Message */}
       <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
-        <h2 className="text-xl font-semibold text-white mb-4">Active Signals</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {state.signals.filter(s => s.status === 'active').map((signal, index) => (
-            <SignalCard key={index} signal={signal} />
-          ))}
-          {state.signals.filter(s => s.status === 'active').length === 0 && (
-            <div className="col-span-full text-center py-8">
-              <Bell className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-              <p className="text-gray-400">No active signals</p>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* All Signals */}
-      <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
-        <h2 className="text-xl font-semibold text-white mb-4">All Signals</h2>
-        <div className="space-y-4">
-          {state.signals.map((signal, index) => (
-            <SignalCard key={index} signal={signal} />
-          ))}
-          {state.signals.length === 0 && (
-            <div className="text-center py-8">
-              <Bell className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-              <p className="text-gray-400">No signals available</p>
-            </div>
-          )}
+        <h2 className="text-xl font-semibold text-white mb-4">AI Trading Signals</h2>
+        <div className="text-center py-12">
+          <Brain className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+          <h3 className="text-lg font-semibold text-white mb-2">Coming Soon</h3>
+          <p className="text-gray-400 mb-4">
+            AI-powered trading signals and insights will be available once the LLM integration is implemented.
+          </p>
+          <div className="bg-gray-800 border border-gray-600 rounded-lg p-4 max-w-md mx-auto">
+            <h4 className="text-sm font-medium text-white mb-2">Planned Features:</h4>
+            <ul className="text-xs text-gray-400 space-y-1">
+              <li>• LangChain-powered signal generation</li>
+              <li>• Real-time market analysis</li>
+              <li>• Risk assessment and recommendations</li>
+              <li>• Historical signal performance tracking</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTrading } from '../context/TradingContext';
-import { TrendingUp, TrendingDown, Minus, RefreshCw } from 'lucide-react';
+import { TrendingUp, TrendingDown, Minus, RefreshCw, BarChart3, X } from 'lucide-react';
 import MarketOverview from '../components/MarketOverview';
+import StockChart from '../components/StockChart';
 
 const MarketData = () => {
   const { state } = useTrading();
+  const [selectedStock, setSelectedStock] = useState(null);
+
+  const handleStockClick = (ticker) => {
+    setSelectedStock(ticker);
+  };
+
+  const closeChart = () => {
+    setSelectedStock(null);
+  };
 
   const getPriceChangeIcon = (changePercent) => {
     const change = parseFloat(changePercent);
@@ -100,16 +110,36 @@ const MarketData = () => {
         </div>
       </div>
 
+      {/* Stock Chart Modal */}
+      {selectedStock && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-gray-900 border border-gray-700 rounded-lg w-11/12 h-5/6 overflow-auto">
+            <div className="flex items-center justify-between p-6 border-b border-gray-700">
+              <h2 className="text-xl font-semibold text-white">Stock Chart</h2>
+              <button
+                onClick={closeChart}
+                className="text-gray-400 hover:text-white"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <div className="p-6">
+              <StockChart ticker={selectedStock} />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Detailed Market Data */}
       <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-semibold text-white">Detailed Market Data</h2>
           <div className="flex items-center space-x-2">
             <span className="text-sm text-gray-400">14 symbols</span>
-            <div className="w-2 h-2 bg-bullish rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
           </div>
         </div>
-        <MarketOverview />
+        <MarketOverview onStockClick={handleStockClick} />
       </div>
 
       {/* Market Statistics */}

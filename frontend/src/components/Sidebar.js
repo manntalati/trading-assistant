@@ -23,19 +23,19 @@ const Sidebar = () => {
       path: '/market-data',
       icon: TrendingUp,
       label: 'Market Data',
-      description: 'Real-time Prices'
+      description: 'Polygon.io Data'
     },
     {
       path: '/signals',
       icon: Bell,
       label: 'Trading Signals',
-      description: 'AI Insights'
+      description: 'Coming Soon'
     },
     {
       path: '/voice',
       icon: Mic,
       label: 'Voice Assistant',
-      description: 'Voice Commands'
+      description: 'Coming Soon'
     },
     {
       path: '/settings',
@@ -97,7 +97,7 @@ const Sidebar = () => {
           
           <div className="space-y-2">
             <div className="flex items-center space-x-2">
-              <Activity className="w-4 h-4 text-bullish" />
+              <Activity className="w-4 h-4 text-gray-400" />
               <span className="text-xs text-gray-400">Data Ingestion</span>
               <span className="text-xs text-bullish">● Active</span>
             </div>

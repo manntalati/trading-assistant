@@ -2,7 +2,7 @@ import React from 'react';
 import { useTrading } from '../context/TradingContext';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 
-const MarketOverview = () => {
+const MarketOverview = ({ onStockClick }) => {
   const { state } = useTrading();
 
   const getPriceChangeIcon = (changePercent) => {
@@ -37,7 +37,11 @@ const MarketOverview = () => {
             if (!priceData) return null;
 
             return (
-              <tr key={ticker} className="border-b border-gray-700/50 hover:bg-gray-800/20 transition-colors">
+              <tr 
+                key={ticker} 
+                className="border-b border-gray-700/50 hover:bg-gray-800/20 transition-colors cursor-pointer"
+                onClick={() => onStockClick && onStockClick(ticker)}
+              >
                 <td className="py-3 px-4">
                   <div className="flex items-center space-x-2">
                     <span className="font-mono font-medium text-white">{ticker}</span>
